@@ -20,6 +20,7 @@ import { AboutUs } from './pages/AboutUs';
 import { Contact } from './pages/Contact';
 import { Business } from './pages/Business';
 import { GetStarted } from './pages/GetStarted';
+import { AdminDashboard } from './pages/admin/AdminDashboard';
 
 function HomePage() {
   return (
@@ -54,6 +55,7 @@ function AppContent() {
         <Route path="/get-started" element={<GetStarted />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/create" element={<CreateBlog />} />
+        <Route path="/admin/blog" element={<AdminDashboard />} />
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="/cancellation-policy" element={<CancellationPolicy />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Crown, Menu, X } from 'lucide-react';
+import { Crown, Menu, X, Settings } from 'lucide-react';
 import { NavLink } from './ui/NavLink';
 import { MobileMenu } from './ui/MobileMenu';
 
@@ -41,6 +41,14 @@ export function Header() {
             </nav>
 
             <div className="flex items-center space-x-4">
+              <Link
+                to="/admin/blog"
+                className="flex items-center space-x-2 text-gray-400 hover:text-amber-400 transition-colors"
+              >
+                <Settings className="w-5 h-5" />
+                <span className="hidden sm:inline">Admin</span>
+              </Link>
+              
               <Link
                 to="/blog/create"
                 className="hidden sm:block bg-gradient-to-r from-amber-400 to-purple-600 text-white px-4 sm:px-6 py-2 rounded-full hover:opacity-90 transition-opacity text-sm sm:text-base"
