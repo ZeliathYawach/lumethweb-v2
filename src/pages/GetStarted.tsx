@@ -23,6 +23,13 @@ export function GetStarted() {
               <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
                 Join thousands of satisfied users who have revolutionized their beauty routine with Lumeth's AI-powered platform
               </p>
+              <div className="flex flex-col items-center space-y-8">
+                <AppStoreButtons variant="dark" className="justify-center" />
+                <div className="flex items-center justify-center space-x-2 text-sm text-gray-400">
+                  <Shield className="w-4 h-4" />
+                  <span>Secure Download • Free to Use</span>
+                </div>
+              </div>
             </div>
           </section>
 
@@ -103,6 +110,27 @@ export function GetStarted() {
 
           {/* Animated Testimonials */}
           <AnimatedTestimonials />
+
+          {/* Final CTA Section */}
+          <section className="py-20 bg-gradient-to-b from-black to-purple-900/20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <h2 className="text-3xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-amber-400 to-purple-600 text-transparent bg-clip-text">
+                  Start Your Beauty Journey Today
+                </span>
+              </h2>
+              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Download Lumeth now and experience the future of beauty services
+              </p>
+              <div className="flex flex-col items-center space-y-6">
+                <AppStoreButtons variant="dark" className="justify-center" />
+                <div className="flex items-center justify-center space-x-2 text-sm text-gray-400">
+                  <Star className="w-4 h-4" />
+                  <span>Rated 4.9/5 by our users</span>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </PageTransition>
     </>
