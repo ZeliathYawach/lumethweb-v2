@@ -1,16 +1,16 @@
 import React from 'react';
 import { PageTransition } from '../components/animations/PageTransition';
 import { AppStoreButtons } from '../components/ui/AppStoreButtons';
-import { Header } from '../components/Header'; // Import the Header component
+import { Header } from '../components/Header';
 import { Sparkles, Calendar, Brain, Star, Clock, Shield } from 'lucide-react';
+import { AnimatedTestimonials } from './GetStarted/components/AnimatedTestimonials';
 
 export function GetStarted() {
   return (
     <>
-      <Header /> {/* Add the Header */}
+      <Header />
       <PageTransition>
         <div className="min-h-screen bg-black text-white">
-          
           {/* Hero Section */}
           <section className="relative pt-32 pb-20">
             <div className="absolute inset-0 bg-gradient-to-b from-purple-900/20 to-black" />
@@ -101,7 +101,8 @@ export function GetStarted() {
             </div>
           </section>
 
-          {/* Other sections remain unchanged */}
+          {/* Animated Testimonials */}
+          <AnimatedTestimonials />
         </div>
       </PageTransition>
     </>
