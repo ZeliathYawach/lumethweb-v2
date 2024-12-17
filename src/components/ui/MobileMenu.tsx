@@ -2,20 +2,14 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { NavLink } from './NavLink';
-import { Settings } from 'lucide-react';
-
-interface NavItem {
-  name: string;
-  path: string;
-}
+import { navigationItems } from '../navigation/NavigationItems';
 
 interface MobileMenuProps {
   isOpen: boolean;
-  navItems: NavItem[];
   onClose: () => void;
 }
 
-export function MobileMenu({ isOpen, navItems, onClose }: MobileMenuProps) {
+export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -28,30 +22,29 @@ export function MobileMenu({ isOpen, navItems, onClose }: MobileMenuProps) {
           <div className="bg-gradient-to-r from-black/95 to-purple-900/95 backdrop-blur-md rounded-2xl border border-amber-400/10 shadow-lg shadow-purple-500/5 p-4">
             <nav>
               <ul className="space-y-4">
-                {navItems.map((item) => (
-                  <li key={item.name}>
+                {navigationItems.map(({ id, label, path }) => (
+                  <li key={id}>
                     <NavLink
-                      to={item.path}
+                      to={path}
                       onClick={onClose}
                       className="block px-4 py-2 text-lg"
                     >
-                      {item.name}
+                      {label}
                     </NavLink>
                   </li>
                 ))}
                 <li>
                   <Link
-                    to="/admin/blog"
+                    to="/blog"
                     onClick={onClose}
-                    className="flex items-center space-x-2 px-4 py-2 text-gray-400 hover:text-amber-400 transition-colors"
+                    className="block px-4 py-2 text-gray-400 hover:text-amber-400 transition-colors"
                   >
-                    <Settings className="w-5 h-5" />
-                    <span>Admin Dashboard</span>
+                    Blog
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to="/blog/create"
+                    to="/get-started"
                     onClick={onClose}
                     className="block px-4 py-2 text-center bg-gradient-to-r from-amber-400 to-purple-600 text-white rounded-full hover:opacity-90 transition-opacity"
                   >
