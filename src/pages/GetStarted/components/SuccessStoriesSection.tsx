@@ -1,24 +1,30 @@
 import React from 'react';
-import { TestimonialCard } from './TestimonialCard';
+import { Track } from '../../../components/ui/testimonials/Track';
 
-const TESTIMONIALS = [
+const testimonials = [
   {
+    id: 1,
     name: "Emily Chen",
     role: "Regular Customer",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150",
-    content: "Lumeth's AI recommendations helped me find the perfect skincare routine. Booking appointments is now a breeze!"
+    content: "Lumeth's AI recommendations helped me find the perfect skincare routine. Booking appointments is now a breeze!",
+    rating: 5
   },
   {
+    id: 2,
     name: "Sarah Johnson",
     role: "Beauty Enthusiast",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150",
-    content: "The personalized service suggestions are amazing. I've discovered so many great beauty professionals through the app."
+    content: "The personalized service suggestions are amazing. I've discovered so many great beauty professionals through the app.",
+    rating: 5
   },
   {
+    id: 3,
     name: "Jessica Williams",
     role: "Professional Model",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150",
-    content: "As someone who needs regular beauty services, Lumeth has made my life so much easier. The booking system is flawless!"
+    content: "As someone who needs regular beauty services, Lumeth has made my life so much easier. The booking system is flawless!",
+    rating: 5
   }
 ];
 
@@ -31,11 +37,7 @@ export function SuccessStoriesSection() {
             Success Stories
           </span>
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {TESTIMONIALS.map((testimonial, index) => (
-            <TestimonialCard key={index} {...testimonial} />
-          ))}
-        </div>
+        <Track testimonials={testimonials} />
       </div>
     </section>
   );

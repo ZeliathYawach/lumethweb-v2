@@ -1,8 +1,1 @@
-export interface Testimonial {
-  id: number;
-  name: string;
-  role: string;
-  image: string;
-  content: string;
-  rating: number;
-}
+export { type Testimonial } from '../../../../types/testimonial';
