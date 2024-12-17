@@ -6,6 +6,9 @@ import { ChallengesSection } from '../components/business/ChallengesSection';
 import { VideoSection } from '../components/business/VideoSection';
 import { PartnersSection } from '../components/business/PartnersSection';
 import { BusinessCTA } from '../components/business/BusinessCTA';
+import { SecurityBadges } from '../components/business/SecurityBadges';
+import { BusinessStats } from '../components/business/BusinessStats';
+import { BusinessReviews } from '../components/business/BusinessReviews';
 
 export function Business() {
   return (
@@ -13,9 +16,12 @@ export function Business() {
       <BusinessBackground />
       <div className="relative">
         <BusinessHero />
+        <BusinessStats />
         <ChallengesSection />
         <VideoSection />
+        <BusinessReviews />
         <PartnersSection />
+        <SecurityBadges />
         <BusinessCTA />
       </div>
     </PageLayout>
