@@ -18,21 +18,29 @@ export function Track({ testimonials }: TrackProps) {
           x: ["0%", "-50%"]
         }}
         transition={{
-          duration: 30,
+          duration: 40,
           ease: "linear",
-          repeat: Infinity
+          repeat: Infinity,
+          repeatType: "loop"
         }}
         whileHover={{
           scale: 0.98,
-          transition: { duration: 0.3 }
+          transition: { duration: 0.5, ease: "easeOut" }
         }}
       >
         {infiniteTestimonials.map((testimonial, index) => (
-          <Card
+          <motion.div
             key={`${testimonial.id}-${index}`}
-            testimonial={testimonial}
-            index={index}
-          />
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.8,
+              delay: index * 0.2,
+              ease: "easeOut"
+            }}
+          >
+            <Card testimonial={testimonial} index={index} />
+          </motion.div>
         ))}
       </motion.div>
     </div>

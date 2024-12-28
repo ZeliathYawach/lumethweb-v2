@@ -12,19 +12,28 @@ export function Avatar({ name, role, image }: AvatarProps) {
     <div className="flex items-center">
       <motion.div
         whileHover={{ scale: 1.1 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
         className="relative"
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-purple-600 rounded-full blur-md opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-r from-amber-400 to-purple-600 rounded-full blur-md"
+          initial={{ opacity: 0 }}
+          whileHover={{ 
+            opacity: 0.5,
+            transition: { duration: 0.3, ease: "easeOut" }
+          }}
+        />
         <img
           src={image}
           alt={name}
-          className="relative w-12 h-12 rounded-full object-cover border-2 border-transparent group-hover:border-amber-400/50 transition-all duration-300"
+          className="relative w-12 h-12 rounded-full object-cover border-2 border-transparent transition-all duration-300"
         />
       </motion.div>
       <div className="ml-4">
         <motion.h3 
           className="font-semibold text-white"
           whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
         >
           {name}
         </motion.h3>
