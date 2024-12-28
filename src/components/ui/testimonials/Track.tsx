@@ -18,14 +18,17 @@ export function Track({ testimonials }: TrackProps) {
           x: ["0%", "-50%"]
         }}
         transition={{
-          duration: 40,
+          duration: 20, // Reduced from 40 to 20 seconds for faster movement
           ease: "linear",
           repeat: Infinity,
           repeatType: "loop"
         }}
         whileHover={{
           scale: 0.98,
-          transition: { duration: 0.5, ease: "easeOut" }
+          transition: { 
+            duration: 0.3, 
+            ease: [0.43, 0.13, 0.23, 0.96] // Custom easing for smoother hover effect
+          }
         }}
       >
         {infiniteTestimonials.map((testimonial, index) => (
@@ -34,9 +37,9 @@ export function Track({ testimonials }: TrackProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
-              duration: 0.8,
-              delay: index * 0.2,
-              ease: "easeOut"
+              duration: 0.5,
+              delay: index * 0.1,
+              ease: [0.43, 0.13, 0.23, 0.96] // Smooth easing for initial animation
             }}
           >
             <Card testimonial={testimonial} index={index} />
