@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.Lumeth.Customer",
+      "sha256_cert_fingerprints": [
+        "33:5A:7F:B5:C7:ED:52:58:30:FE:C1:2A:CF:16:A2:8A:D1:DE:D1:F9:6A:72:0E:34:5B:D9:50:D0:A3:46:C9:B1"
+      ]
+    }
+  }
+]
